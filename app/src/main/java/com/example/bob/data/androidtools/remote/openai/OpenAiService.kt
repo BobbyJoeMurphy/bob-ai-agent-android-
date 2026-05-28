@@ -15,7 +15,6 @@ object OpenAiService {
     private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
         .addInterceptor { chain ->
-            println("API KEY: ${BuildConfig.OPENAI_API_KEY}")
             val request = chain.request()
                 .newBuilder()
                 .addHeader(
